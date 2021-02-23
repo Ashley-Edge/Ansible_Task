@@ -37,3 +37,12 @@
       pip:
         executable: pip3
         name: docker
+
+    - name: "Adding user to the docker grpup"
+      user:
+        name: ashleyedge89
+        groups: docker
+        append: yes
+
+    - name: "Restart connection to ensure the user can complete docker commands"
+      meta: reset_connection
